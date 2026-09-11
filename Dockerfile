@@ -9,4 +9,8 @@ RUN apk add --no-cache gosu
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+# Actuator health endpoint (spring-boot-starter-actuator) gates orchestrator readiness.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
+    CMD wget -qO- http://localhost:8080/actuator/health || exit 1
+
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

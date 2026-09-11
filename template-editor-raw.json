@@ -1,0 +1,5 @@
+{
+  "PORT": {"value": "8080", "description": "HTTP port the Allure Server listens on. Railway exposes this publicly."},
+  "BASIC_AUTH_USERNAME": {"value": "admin", "description": "Bootstrap admin username. Seeded on first startup; manage users via /app/admin/users."},
+  "BASIC_AUTH_PASSWORD": {"value": "${{secret(32)}}", "description": "Bootstrap admin password. Change after first login via /app/admin/users."}
+}

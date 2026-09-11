@@ -1,0 +1,18 @@
+# Local development variant using the Railway wrapper Dockerfile.
+# For production deployment, use the Railway template instead.
+services:
+  allure-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: allure-server:local
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./allure-server-store:/allure:rw
+      - ./ext:/ext:rw
+    environment:
+      PORT: "8080"
+      BASIC_AUTH_USERNAME: admin
+      BASIC_AUTH_PASSWORD: admin
+    restart: unless-stopped

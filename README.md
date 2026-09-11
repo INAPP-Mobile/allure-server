@@ -6,7 +6,7 @@ A self-hosted server for storing, aggregating, and managing Allure test results 
 
 Host your own Allure Server on Railway. This template provisions a single service with a persistent volume for all test data (results, reports, H2 database).
 
-[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/allure-server)
+[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/luminous-essence)
 
 ## Features
 
